@@ -1,0 +1,25 @@
+services:
+  web:
+    build:
+      context: ./app
+    container_name: flask
+    ports:
+      - "8000:5000"
+    volumes:
+      - ./app:/code
+    environment:
+      FLASK_DEBUG: "true"
+  redis:
+    image: "redis:alpine"
+    container_name: database
+    volumes:
+      - redis_data:/data
+
+volumes:
+  redis_data:
+    name: redis_data
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: C:/Users/Lev/source/laughing-octo-memory/redis_data
