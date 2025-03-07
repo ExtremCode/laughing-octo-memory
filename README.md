@@ -12,4 +12,4 @@ It's correctly for Windows OS.
 1. run `docker compose up -d`
 2. run `curl http://localhost:8000` to send GET request. You get response automatically in your command line.
 
-Notice that number of GET requests counts is not removed when you remove *database* container due to the fact that data from Redis database saved in *redis_data* folder.
+Notice that number of GET requests counts is not removed when you remove *database* container due to the fact that data from Redis database saved in *redis_data* folder. If it's necessary, you can change location of *redis_data* folder: in docker-compose.yaml write absolute path in 25th line.
